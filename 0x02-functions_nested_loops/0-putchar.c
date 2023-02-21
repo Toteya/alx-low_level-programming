@@ -1,5 +1,4 @@
-/* prototype */
-int _putchar(char c);
+#include "main.h"
 
 /**
  * main - Prints a string using _putchar function
