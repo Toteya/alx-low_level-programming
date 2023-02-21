@@ -9,9 +9,9 @@ int main(void)
 {
 	int i;
 	/* integer variables to be used to generate the Fibonacci sequence */
-	unsigned long int a = 0, b = 1, c;
+	long int a = 0, b = 1, c;
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 50; i++)
 	{
 		c = a + b;
 		if (i)
@@ -21,7 +21,7 @@ int main(void)
 		b = c;
 	}
 	printf("\n");
-	return(0);
+	return (0);
 }
 
 
