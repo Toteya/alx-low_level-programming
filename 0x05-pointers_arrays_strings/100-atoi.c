@@ -20,18 +20,14 @@ int _atoi(char *s)
 			if (s[i] >= '1' && s[i] <= '9')
 			{
 				numfound = 1;
-				if (sign < 0)
-					num *= -1;
+				num *= sign;
 			}
 		}
 		if (numfound)
 		{
 			if (!(s[i] >= '0' && s[i] <= '9'))
 				break;
-			if (sign > 0)
-				num = num * 10 + (s[i] - '0');
-			else
-				num = num * 10 - (s[i] - '0');
+			num = num * 10 + sign * (s[i] - '0');
 		}
 	}
 	return (num);
