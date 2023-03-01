@@ -28,8 +28,5 @@ null byte (\0), to the buffer pointed to by dest.
 * -11. Create a program that generates random valid passwords for the program 101-crackme.
 
 ## Resources:
-* [Nested while loops]https://intranet.alxswe.com/rltoken/aDRkFzUkVysnD94Dpm3w5g
-* [C - Functions]https://intranet.alxswe.com/rltoken/zf4IZeoe0yFZL2X7_nznQQ
-* [Learning to Program in C]https://intranet.alxswe.com/rltoken/iQ87CI4Lf41U_uRh9QsoQA
-* [What is the purpose of a function prototype?]https://intranet.alxswe.com/rltoken/pUXhvD6-xl5BbWyj1AhCEA
-* [C - Header Files]https://intranet.alxswe.com/rltoken/IFY075ffrszSJvHqPAa-zQ
+* [Pointers and arrays]https://intranet.alxswe.com/concepts/60
+* [Data Structures]https://intranet.alxswe.com/concepts/120
