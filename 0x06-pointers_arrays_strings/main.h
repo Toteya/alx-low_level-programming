@@ -1,0 +1,11 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+/* Libraries */
+#include <stdio.h>
+
+/* Funtion prototypes */
+int _putchar(char c);
+char *_strcat(char *dest, char *src);
+
+#endif /* MAIN_H */
