@@ -3,6 +3,7 @@
 
 /* Libraries */
 #include <stdio.h>
+#include <stdlib.h> 
 
 /* Funtion prototypes */
 int _putchar(char c);
