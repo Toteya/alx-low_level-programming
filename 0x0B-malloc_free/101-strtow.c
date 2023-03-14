@@ -70,6 +70,8 @@ char **strtow(char *str)
 		else if (str[i] != ' ' && str[i - 1] == ' ')
 			words++;
 	}
+	if (words < 2)
+		return (NULL);
 
 	str_arr = malloc(sizeof(char *) * words);
 	if (str_arr == NULL)
