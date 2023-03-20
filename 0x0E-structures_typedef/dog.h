@@ -7,12 +7,12 @@
  * @age: The age (float) of the dog
  * @owner: The owner (string) of the dog
  */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+} dog_t;
 
 /* Libraries */
 #include <stdio.h>
