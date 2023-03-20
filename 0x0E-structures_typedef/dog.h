@@ -14,7 +14,7 @@ typedef struct dog
 	char *owner;
 } dog_t;
 
-/* Libraries */
+// Libraries
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
