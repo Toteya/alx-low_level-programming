@@ -3,7 +3,7 @@
 
 /**
  * struct dog - Data structure defining a dog
- * @: The name (string) of the dog
+ * @name: The name (string) of the dog
  * @age: The age (float) of the dog
  * @owner: The owner (string) of the dog
  */
