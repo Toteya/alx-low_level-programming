@@ -3,7 +3,7 @@
 
 /**
  * struct dog - Data structure defining a dog
- * @name: The name (string) of the dog
+ * @: The name (string) of the dog
  * @age: The age (float) of the dog
  * @owner: The owner (string) of the dog
  */
@@ -14,7 +14,7 @@ typedef struct dog
 	char *owner;
 } dog_t;
 
-// Libraries
+/* Libraries */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
