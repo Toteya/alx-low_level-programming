@@ -22,11 +22,11 @@ int main(int argc, char *argv[])
 	x = atoi(argv[1]);
 	y = atoi(argv[3]);
 
-	if (op != '+' && op != '-' && op != '*' && op != '/' && op != '%')
+/*	if (op != '+' && op != '-' && op != '*' && op != '/' && op != '%')
 	{
 		printf("Error\n");
 		return (99);
-	}
+	} */
 	if ((op == '/' || op == '%') && y == 0)
 	{
 		printf("Error\n");
