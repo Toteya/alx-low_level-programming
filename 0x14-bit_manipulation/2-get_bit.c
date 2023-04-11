@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * get_bit - Gets the bit of a number at the specified index
  * @n: The number whose bit is to be found
@@ -6,11 +8,8 @@
  * Return: The bit at the given index if successful.
  * Otherwise return -1.
  */
-int get_bit(unsigned int n, unsigned int index)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index > 31)
-		return (-1);
-
 	while (index)
 	{
 		if (n <= 1 && index)
