@@ -8,6 +8,9 @@
  */
 int get_bit(unsigned int n, unsigned int index)
 {
+	if (index > 63)
+		return (-1);
+
 	while (index)
 	{
 		if (n <= 1 && index)
