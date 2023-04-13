@@ -18,7 +18,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		b = (b << 1) + 1;
 	}
 	b = 1;
-	while (index)
+	while (index && b <= x)
 	{
 		b = b << 1;
 		index--;
