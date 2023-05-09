@@ -18,15 +18,15 @@ int main(int ac, char *av[])
 	}
 
 	c = copy_file_content(av[1], av[2]);
-	if (c == -1)
+	if (c == 98)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		return (98);
+		return (c);
 	}
-	else if (c == -2)
+	else if (c == 99)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
-		return (98);
+		return (c);
 	}
 	return (0);
 }
@@ -45,20 +45,19 @@ int copy_file_content(const char *file_from, const char *file_to)
 
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
-		return (-1);
+		return (98);
 	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
-		return (-2);
+		return (99);
 	while (r)
 	{
 		r = read(fd1, buf, 1024);
 		if (r == -1)
-			return (-1);
+			return (98);
 		if (!r)
 			break;
 		if (write(fd2, buf, r) == -1)
-			return (-2);
-		clear_mem(buf, 1024);
+			return (99);
 	}
 	free(buf);
 	if (close(fd1) == -1)
@@ -72,21 +71,4 @@ int copy_file_content(const char *file_from, const char *file_to)
 		exit(100);
 	}
 	return (1);
-}
-
-/**
- * clear_mem: Sets the memory of a buffer to zero.
- * @buf: Pointer to the memory buffer;
- * @len: Size of the buffer in bytes
- *
- * Return: Nothing
- */
-void clear_mem(char *buf, size_t size)
-{
-	size_t i;
-
-	for (i = 0; i < size; i++)
-	{
-		buf[i] = 0;
-	}
 }
