@@ -41,7 +41,7 @@ int main(int ac, char *av[])
 int copy_file_content(const char *file_from, const char *file_to)
 {
 	int fd1, fd2, r = 1;
-	char *buf = calloc(1024, sizeof(char));
+	char buf[1024];
 
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
@@ -56,10 +56,9 @@ int copy_file_content(const char *file_from, const char *file_to)
 			return (98);
 		if (!r)
 			break;
-		if (write(fd2, buf, r) == -1)
+		if (write(fd2, buf, r) != r)
 			return (99);
 	}
-	free(buf);
 	if (close(fd1) == -1)
 	{
 		dprintf(2, "Can't close fd %d\n", fd1);
