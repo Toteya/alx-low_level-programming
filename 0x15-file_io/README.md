@@ -9,8 +9,9 @@
 
 * -3. Write a program that copies the content of a file to another file.
 
-* -4. 
+* -4. Write a program that displays the information contained in the ELF header at the start of an ELF file. 
 
 ## Resources:
 * [File descriptors]https://intranet.alxswe.com/rltoken/Duva-9Fjyskt39R__Nnazg
 * [C Programming in Linux Tutorial #024 - open() read() write() Functions]https://intranet.alxswe.com/rltoken/x05veqiLPSxXmJf9zTtCkQ
+* [Input-output system calls in C]https://www.geeksforgeeks.org/input-output-system-calls-c-create-open-close-read-write/
