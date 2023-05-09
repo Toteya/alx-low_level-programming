@@ -41,7 +41,7 @@ int main(int ac, char *av[])
 int copy_file_content(const char *file_from, const char *file_to)
 {
 	int fd1, fd2, r = 1;
-	char buf;
+	char *buf = calloc(1024, sizeof(char));
 
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
@@ -51,23 +51,42 @@ int copy_file_content(const char *file_from, const char *file_to)
 		return (-2);
 	while (r)
 	{
-		r = read(fd1, &buf, 1);
+		r = read(fd1, buf, 1024);
 		if (r == -1)
 			return (-1);
 		if (!r)
 			break;
-		if (write(fd2, &buf, 1) == -1)
+		if (write(fd2, buf, r) == -1)
 			return (-2);
+		clear_mem(buf, 1024);
 	}
+	free(buf);
 	if (close(fd1) == -1)
 	{
 		dprintf(2, "Can't close fd %d\n", fd1);
-		exit(98);
+		exit(100);
 	}
 	if (close(fd2) == -1)
 	{
 		dprintf(2, "Can't close fd %d\n", fd2);
-		exit(98);
+		exit(100);
 	}
 	return (1);
+}
+
+/**
+ * clear_mem: Sets the memory of a buffer to zero.
+ * @buf: Pointer to the memory buffer;
+ * @len: Size of the buffer in bytes
+ *
+ * Return: Nothing
+ */
+void clear_mem(char *buf, size_t size)
+{
+	size_t i;
+
+	for (i = 0; i < size; i++)
+	{
+		buf[i] = 0;
+	}
 }
