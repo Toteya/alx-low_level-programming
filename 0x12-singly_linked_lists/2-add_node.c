@@ -15,18 +15,14 @@ list_t *add_node(list_t **head, const char *str)
 	if (new == NULL)
 		return (NULL);
 
-	if (str != NULL)
+	new->str = strdup(str);
+	if (str == NULL)
 	{
-		new->str = strdup(str);
-		if (str == NULL)
-		{
-			free(new->str);
-			free(new);
-			return (NULL);
-		}
+		free(new);
+		return (NULL);
 	}
 	new->len = strlen(new->str);
 	new->next = *head;
 	*head = new;
-	return (new);
+	return (*head);
 }
