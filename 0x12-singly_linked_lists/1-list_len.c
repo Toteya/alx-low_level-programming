@@ -2,8 +2,9 @@
 
 /**
  * list_len - Returns the number of elements in a linked list_t
+ * @h: Pointer to the first node of the linked list
  *
- * Return
+ * Return: Number of elements.
  */
 size_t list_len(const list_t *h)
 {
@@ -12,7 +13,7 @@ size_t list_len(const list_t *h)
 	while (h != NULL)
 	{
 		n++;
-		h = h-> next;
+		h = h->next;
 	}
 	return (n);
 }
