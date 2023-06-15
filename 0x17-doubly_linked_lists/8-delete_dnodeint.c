@@ -6,7 +6,7 @@
  * @head: Pointer to the head node of the list
  * @index: of the node to be deleted
  *
- * Return: 1 on success. 0 on failure.
+ * Return: 1 on success. -1 on failure.
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
@@ -14,7 +14,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *curr;
 
 	if (!head)
-		return (0);
+		return (-1);
 
 	curr = *head;
 	while (curr && i <= index)
@@ -27,13 +27,11 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				(curr->next)->prev = curr->prev;
 			if (!i)
 				*head = curr->next;
-			curr->next = NULL;
-			curr->prev = NULL;
 			free(curr);
 			return (1);
 		}
 		curr = curr->next;
 		i++;
 	}
-	return (0);
+	return (-1);
 }
