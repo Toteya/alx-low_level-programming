@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-for x in reversed(range(1000)):
-    palindrome = False
-    for y in [x, x - 1]:
+palindromes = set();
+for x in reversed(range(100, 1000)):
+    for y in reversed(range(100, x+1)):
         z = str(x * y)
         if z == z[::-1]:
-            palindrome = True
-            break;
-    if palindrome:
-        print(f"Palindrome found! {z} = {x} x {y}")
-        break;
-if not palindrome:
+            palindromes.add(int(z));
+if palindromes:
+    print("Palindrome found! {}".format(max(palindromes)))
+if not palindromes:
     print("Sorry, no palindrome found.")
