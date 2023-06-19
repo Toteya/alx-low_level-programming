@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
- 
+
 /* Function prototypes */
 
 int _putchar(char c);
