@@ -14,7 +14,6 @@ int main(void)
 
 	ht = hash_table_create(1024);
 	hash_table_set(ht, "betty", "cool");
-	hash_table_set(ht, "betty", NULL);
 
 /*
 	hash_table_set(ht, "subgenera", "50 cent");
