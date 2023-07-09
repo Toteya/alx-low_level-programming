@@ -214,7 +214,7 @@ int insert_node_sList(shash_table_t *ht, shash_node_t *hn)
 
 /**
  * shash_table_delete - Deletes a hash table
- * ht: The hash table to be deleted
+ * @ht: The hash table to be deleted
  *
  * Return: Nothing.
  */
