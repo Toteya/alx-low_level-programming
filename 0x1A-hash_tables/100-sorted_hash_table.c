@@ -213,6 +213,31 @@ int insert_node_sList(shash_table_t *ht, shash_node_t *hn)
 }
 
 /**
+ * shash_table_delete - Deletes a hash table
+ * ht: The hash table to be deleted
+ *
+ * Return: Nothing.
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	shash_node_t *p, *p_tmp;
+
+	if (!ht)
+		return;
+
+	p = ht->shead;
+	while (p)
+	{
+		p_tmp = p;
+		p = p->snext;
+		free_shash_node(p_tmp);
+	}
+
+	free(ht->array);
+	free(ht);
+}
+
+/**
  * free_shash_node - Frees a shash_node_t
  * @hn: The hash node to be freed
  *
