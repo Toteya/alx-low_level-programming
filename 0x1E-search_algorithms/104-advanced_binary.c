@@ -38,31 +38,15 @@ int ab_search(int *array, size_t lower, size_t upper, int value)
 
 	print_subarray(array, lower, upper);
 	if (value == array[i])
-	{
-		i = find_first_match(array, i, lower, value);
-		return (i);
-	}
+		if (!(i > lower && value == array[i - 1]))
+			return (i);
 	if (value > array[i])
 		lower = i + 1;
 	else
-		upper = i;
+		upper = i + 1;
 	return (ab_search(array, lower, upper, value));
 }
 
-/**
- * find_first_match - Finds the index with the first matching value in an array
- * @array: The array to be searched
- * @index: The current index
- * @lower: The lower bound of the array
- * @value: The value to search for
- * Return: The index where the first match is located
- */
-int find_first_match(int *array, size_t index, size_t lower, int value)
-{
-	if (index > lower && value == array[index - 1])
-		return (find_first_match(array, index - 1, lower, value));
-	return (index);
-}
 /**
  * print_subarray - Prints a subarray
  * @array: Pointer to the array to be printed
